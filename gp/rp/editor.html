@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>GP</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor">
+    <link rel="stylesheet" href="assets/css/swiper-icons.css">
+    <link rel="stylesheet" href="assets/css/-Login-form-Page-BS4--Login-form-Page-BS4.css">
+    <link rel="stylesheet" href="assets/css/Animated-Type-Heading-BS5.css">
+    <link rel="stylesheet" href="assets/css/Billing-Table-with-Add-Row--Fixed-Header-Feature.css">
+    <link rel="stylesheet" href="assets/css/btmbar.css">
+    <link rel="stylesheet" href="assets/css/carou.css">
+    <link rel="stylesheet" href="assets/css/Features-Image-icons.css">
+    <link rel="stylesheet" href="assets/css/Features-Image-images.css">
+    <link rel="stylesheet" href="assets/css/Login-Page-B5.css">
+    <link rel="stylesheet" href="assets/css/Profile-Card.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider-swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="assets/css/Table-With-Search-search-table.css">
+    <link rel="stylesheet" href="assets/css/Table-With-Search.css">
+    <link rel="stylesheet" href="assets/css/Team-with-rotating-cards.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.0.1/ckeditor.js"></script>
+    <script src="assets/js/session.js"></script>
+
+
+</head>
+
+<body>
+        <div class="container">
+                    <div class="card shadow-lg mb-2 db-graph">
+                        <div class="card-header">
+                            <h6 class="text-white m-4 font-md" style="width: 100%;">Admin Panel</h6>
+                        </div>
+                        <div class="card-body" style="width: 100%;">
+                                <div><label>Welcome Note</label></div>
+                                <div class="row"><textarea id="editor1" style="height: 300px;width: 100%;" name="editor1"></textarea></div>
+                                <div><label>Agenda</label></div>
+                                <div class="row"><textarea id="editor2" style="height: 300px;" name="editor2"></textarea></div>
+
+                                <div><label>Notice Board</label></div>
+                                <div class="row"><textarea id="editor3" style="height: 300px;" name="editor3"></textarea></div>
+                        
+                
+                </div>
+                <button class="text-bg-success" onclick="save_data()">Save</button>
+                <button class="text-bg-danger" onclick="clearAll()">clear All</button>
+            </div>
+        </div>
+
+    <script>
+        CKEDITOR.replace('editor1', {
+          // You can customize CKEditor options here if needed
+          // For example:
+          // toolbar: ['bold', 'italic', 'link', 'undo', 'redo']
+        });
+        CKEDITOR.replace('editor2', {
+          // You can customize CKEditor options here if needed
+          // For example:
+          // toolbar: ['bold', 'italic', 'link', 'undo', 'redo']
+        });
+        CKEDITOR.replace('editor3', {
+          // You can customize CKEditor options here if needed
+          // For example:
+          // toolbar: ['bold', 'italic', 'link', 'undo', 'redo']
+        });
+
+            function clearAll(){
+                var editor1 = CKEDITOR.instances.editor1; // 'editor' should be the ID of your textarea
+                var editor2 = CKEDITOR.instances.editor2; // 'editor' should be the ID of your textarea
+                var editor3 = CKEDITOR.instances.editor3; // 'editor' should be the ID of your textarea
+                editor1.setData('');
+                editor2.setData('');
+                editor3.setData('');
+        }
+        
+        function save_data(){
+            var editor1 = CKEDITOR.instances.editor1; // 'editor' should be the ID of your textarea
+            var editor2 = CKEDITOR.instances.editor2; // 'editor' should be the ID of your textarea
+            var editor3 = CKEDITOR.instances.editor3; // 'editor' should be the ID of your textarea
+            $(document).ready(function() {
+                var data1=editor1.getData();
+                var data2=editor2.getData();
+                var data3=editor3.getData();
+                $.ajax({
+                    url: "store_home_page.php",
+                    method: "POST",
+                    data: {
+                        welcome:data1,
+                        agenda: data2,
+                        notice: data3
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        alert("Data Saved Successfully!")
+                    }
+                });
+            });
+
+        }
+        function get_data()
+        {
+            var editor1 = CKEDITOR.instances.editor1; // 'editor' should be the ID of your textarea
+            var editor2 = CKEDITOR.instances.editor2; // 'editor' should be the ID of your textarea
+            var editor3 = CKEDITOR.instances.editor3; // 'editor' should be the ID of your textarea
+            $(document).ready(function() {
+            $.ajax({
+                url: "view_home_page.php",
+                method: "GET",
+                dataType: "json",
+                success: function(data) {
+                    console.log(data)
+                    editor1.setData(data.welcome);
+                    editor2.setData(data.agenda);
+                    editor3.setData(data.notice);
+                }
+            });
+        });
+        }
+        get_data();
+      </script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/Billing-Table-with-Add-Row--Fixed-Header-Feature-Billing-Table-with-Add-Row--Fixed-Header.js"></script>
+    <script src="assets/js/session.js"></script>
+
+</body>
+
+</html>

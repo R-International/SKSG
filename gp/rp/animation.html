@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .animated-text {
+      font-size: 20vw;
+      font-weight: bold;
+      color: #000000;
+      opacity: 0;
+      animation: scaleUpText 2s ease-out forwards;
+    }
+    #allcount_label {
+      text-align: center; /* Center the label */
+      margin-bottom: 20px;
+    }
+
+    @keyframes scaleUpText {
+      0% {
+        opacity: 0;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+  <title>पारायण  संपन्न</title>
+</head>
+<body>
+  <canvas id="confettiCanvas"></canvas>
+  <div>
+    <h1 id="allcount_label">पारायण  संपन्न</h1>
+    <br>
+    <div class="animated-text" id="animatedText">Loading...</div>
+  </div>
+
+  <script>
+    const animatedText = document.getElementById('animatedText');
+
+    function updateAnimatedText(total) {
+      animatedText.textContent =total.toLocaleString(); // Format number with commas
+      animatedText.classList.add('animated'); // Apply your animation class
+      animatedText.style.textAlign="center";
+    }
+
+    // Fetch the total prayCounter using AJAX
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'getallcount.php', true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          const response = JSON.parse(xhr.responseText);
+          const totalPrayCounter = response.total || 0;
+          updateAnimatedText(totalPrayCounter);
+        } else {
+          console.error('Error fetching data:', xhr.statusText);
+        }
+      }
+    };
+    xhr.send();
+  </script>
+  <script>
+    const canvas = document.getElementById('confettiCanvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const confettiColors = ['#FFC107', '#E91E63', '#2196F3', '#4CAF50'];
+
+    class Confetti {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 20 + 10;
+        this.color = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+        this.rotation = Math.random() * 360;
+        this.speed = Math.random() * 4 + 1;
+      }
+
+      update() {
+        this.y += this.speed;
+        this.rotation += this.speed;
+        if (this.y > canvas.height) {
+          this.y = -20;
+        }
+      }
+
+      draw() {
+        ctx.save();
+        ctx.fillStyle = this.color;
+        ctx.translate(this.x, this.y);
+        ctx.rotate((this.rotation * Math.PI) / 180);
+        ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+        ctx.restore();
+      }
+    }
+
+    const confettiArray = [];
+
+    function createConfetti() {
+      for (let i = 0; i < 100; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        confettiArray.push(new Confetti(x, y));
+      }
+    }
+
+    function animateConfetti() {
+      if (performance.now() < startTime + 4000) {
+        requestAnimationFrame(animateConfetti);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (const confetti of confettiArray) {
+          confetti.update();
+          confetti.draw();
+        }
+      }
+      else{
+        location.href="home.html";
+    }
+
+    }
+
+    createConfetti();
+
+    const startTime = performance.now();
+    animateConfetti();
+  </script>
+</body>
+</html>

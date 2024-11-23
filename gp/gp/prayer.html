@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Prayer</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+ 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor">
+    <link rel="stylesheet" href="assets/css/swiper-icons.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/-Login-form-Page-BS4--Login-form-Page-BS4.css">
+    <link rel="stylesheet" href="assets/css/btmbar.css">
+    <link rel="stylesheet" href="assets/css/carou.css">
+    <link rel="stylesheet" href="assets/css/Features-Image-icons.css">
+    <link rel="stylesheet" href="assets/css/Features-Image-images.css">
+    <link rel="stylesheet" href="assets/css/Login-Page-B5.css">
+    <link rel="stylesheet" href="assets/css/Profile-Card.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider-swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="assets/css/Team-with-rotating-cards.css">
+
+    <style>
+      .audio-player {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+      }
+
+      .play-pause-button {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          font-size: 18px;
+          color: #333;
+          transition: color 0.2s ease-in-out;
+      }
+
+      .play-pause-button:hover {
+          color: #4caf50;
+      }
+
+      .progress-bar-container {
+          flex-grow: 1;
+          height: 6px;
+          position: relative;
+          background-color: #ddd;
+          border-radius: 4px;
+          overflow: hidden;
+      }
+
+      .progress-bar-fill {
+          height: 100%;
+          background-color: #4caf50;
+          transition: width 0.1s ease-in-out;
+      }
+  </style>
+
+    
+</head>
+
+<body>
+    <div class="simple-slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    <section id="carousel">
+        <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="bg-light border rounded border-light pulse animated img1 carousel-hero jumbotron py-5 px-4">
+                        <h1 class="hero-title"></h1>
+                        <p class="hero-subtitle"></p>
+                        <p></p>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item">
+                    <div class="bg-light border rounded border-light pulse animated img2 carousel-hero jumbotron py-5 px-4">
+                        <h1 class="hero-title"></h1>
+                        <p class="hero-subtitle"></p>
+                        <p></p>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item">
+                    <div class="bg-light border rounded border-light pulse animated img3 carousel-hero jumbotron py-5 px-4">
+                        <h1 class="hero-title"></h1>
+                        <p class="hero-subtitle"></p>
+                        <p></p>
+                    </div>
+                </div>
+                
+            </div>
+            <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
+            <div class="carousel-indicators"><button type="button" data-bs-target="#carousel-1" data-bs-slide-to="0"></button> <button type="button" data-bs-target="#carousel-1" data-bs-slide-to="1"></button> <button type="button" data-bs-target="#carousel-1" data-bs-slide-to="2" class="active"></button></div>
+        </div>
+    </section>
+    <div id="nav-wrapper" class="fixed-bottom" style="height: 60px;max-height: 20%;width: 100%;max-width: 100%;padding-bottom: 0;margin-bottom: 0;position: fixed;display: grid;overflow: hidden;font-size: 15px;">
+        <ul class="nav nav-justified text-info" id="navbar" style="background: var(--purple);color: var(--light);width: 100%;max-width: 100%;height: 100%;max-height: 100%;padding-bottom: 0;position: relative;">
+            <li class="nav-item d-flex d-sm-flex justify-content-center justify-content-sm-center" id="navlink-1" style="$nav-link-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;background: #000000;width: 100%;height: 100%;box-shadow: 0px 0px;"><a class="nav-link active d-flex flex-column-reverse align-items-center align-items-sm-center align-items-md-center align-items-lg-center" href="home.html" style="color: white;/*transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;*//*width: auto;*/font-size: 105%;height: 100%;box-shadow: 0px 0px;">HOME<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" style="font-size: 160%;">
+                        <path d="M10.7071 2.29289C10.3166 1.90237 9.68342 1.90237 9.29289 2.29289L2.29289 9.29289C1.90237 9.68342 1.90237 10.3166 2.29289 10.7071C2.68342 11.0976 3.31658 11.0976 3.70711 10.7071L4 10.4142V17C4 17.5523 4.44772 18 5 18H7C7.55228 18 8 17.5523 8 17V15C8 14.4477 8.44772 14 9 14H11C11.5523 14 12 14.4477 12 15V17C12 17.5523 12.4477 18 13 18H15C15.5523 18 16 17.5523 16 17V10.4142L16.2929 10.7071C16.6834 11.0976 17.3166 11.0976 17.7071 10.7071C18.0976 10.3166 18.0976 9.68342 17.7071 9.29289L10.7071 2.29289Z" fill="currentColor"></path>
+                    </svg></a></li>
+            <li class="nav-item d-flex d-sm-flex justify-content-center justify-content-sm-center" id="navlink-2" style="$nav-link-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;background: #000000;width: 100%;height: 100%;"><a class="nav-link active d-flex flex-column-reverse align-items-center align-items-sm-center align-items-md-center align-items-lg-center" href="prayer.html" style="color: white;transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;/*width: 75px;*/font-size: 105%;background: rgb(254,199,0);">PRAYER<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor" class="d-flex" style="font-size: 160%;">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"></path>
+                    </svg></a></li>
+            <li class="nav-item d-flex d-sm-flex justify-content-center justify-content-sm-center" id="navlink-4" style="$nav-link-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;background: #000000;width: 100%;height: 100%;"><a class="nav-link active d-flex flex-column-reverse align-items-center align-items-sm-center align-items-md-center align-items-lg-center" href="myreport.html" style="color: white;transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;width: 100%;font-size: 105%;">REPORT<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" class="d-flex d-lg-flex justify-content-lg-center" style="font-size: 160%;">
+                        <path d="M9 2C8.44772 2 8 2.44772 8 3C8 3.55228 8.44772 4 9 4H11C11.5523 4 12 3.55228 12 3C12 2.44772 11.5523 2 11 2H9Z" fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C4 3.89543 4.89543 3 6 3C6 4.65685 7.34315 6 9 6H11C12.6569 6 14 4.65685 14 3C15.1046 3 16 3.89543 16 5V16C16 17.1046 15.1046 18 14 18H6C4.89543 18 4 17.1046 4 16V5ZM7 9C6.44772 9 6 9.44772 6 10C6 10.5523 6.44772 11 7 11H7.01C7.56228 11 8.01 10.5523 8.01 10C8.01 9.44772 7.56228 9 7.01 9H7ZM10 9C9.44772 9 9 9.44772 9 10C9 10.5523 9.44772 11 10 11H13C13.5523 11 14 10.5523 14 10C14 9.44772 13.5523 9 13 9H10ZM7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44772 15 7 15H7.01C7.56228 15 8.01 14.5523 8.01 14C8.01 13.4477 7.56228 13 7.01 13H7ZM10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15H13C13.5523 15 14 14.5523 14 14C14 13.4477 13.5523 13 13 13H10Z" fill="currentColor"></path>
+                    </svg></a></li>
+            <li class="nav-item d-flex d-sm-flex justify-content-center justify-content-sm-center" id="navlink-6" style="$nav-link-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;background: var(--bs-black);width: 100%;height: 100%;"><a class="nav-link active d-flex flex-column-reverse align-items-center align-items-sm-center align-items-md-center align-items-lg-center" href="ranking.html" style="color: white;transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;width: 100%;font-size: 105%;">RANKING<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor" class="d-flex" style="font-size: 160%;">
+                        <g>
+                            <rect fill="none" height="24" width="24"></rect>
+                        </g>
+                        <g>
+                            <g>
+                                <g>
+                                    <path d="M12,7.83L15.17,11l1.41-1.41L12,5L7.41,9.59L8.83,11L12,7.83z M12,2.83L15.17,6l1.41-1.41L12,0L7.41,4.59L8.83,6L12,2.83 z M12,21.17L8.83,18l-1.41,1.41L12,24l4.59-4.59L15.17,18L12,21.17z M12,16.17L8.83,13l-1.41,1.41L12,19l4.59-4.59L15.17,13 L12,16.17z"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg></a></li>
+            <li class="nav-item d-flex d-sm-flex justify-content-center justify-content-sm-center" id="navlink-5" style="$nav-link-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;background: var(--bs-black);border-style: hidden;border-color: rgb(0,0,0);width: 100%;height: 100%;"><a class="nav-link active d-flex flex-column-reverse align-items-center align-items-sm-center align-items-md-center align-items-lg-center" href="information.html" style="color: white;transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;width: 100%;font-size: 105%;">Information<br><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" class="d-flex" style="font-size: 160%;">
+
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM11 6C11 6.55228 10.5523 7 10 7C9.44772 7 9 6.55228 9 6C9 5.44772 9.44772 5 10 5C10.5523 5 11 5.44772 11 6ZM9 9C8.44772 9 8 9.44772 8 10C8 10.5523 8.44772 11 9 11V14C9 14.5523 9.44772 15 10 15H11C11.5523 15 12 14.5523 12 14C12 13.4477 11.5523 13 11 13V10C11 9.44772 10.5523 9 10 9H9Z" fill="currentColor"></path>
+                    </svg></a></li>
+            <li class="nav-item d-flex d-sm-flex justify-content-center justify-content-sm-center" id="navlink-7" style="$nav-link-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;background: var(--bs-black);width: 100%;height: 100%;"><a class="nav-link active d-flex flex-column-reverse align-items-center align-items-sm-center align-items-md-center align-items-lg-center" href="logout.php" style="color: white;transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;width: 100%;font-size: 105%;">LOGOUT<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" class="d-flex" style="font-size: 30px;">
+                        <path d="M17 16L21 12M21 12L17 8M21 12L7 12M13 16V17C13 18.6569 11.6569 20 10 20H6C4.34315 20 3 18.6569 3 17V7C3 5.34315 4.34315 4 6 4H10C11.6569 4 13 5.34315 13 7V8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></a></li>
+        </ul>
+    </div>
+    <div class="text-center">
+    <div class="text-warning"><marquee>स्वरांजली एवं सार्वजनिक गणेशोत्सव समिति गुरूग्राम का संयुक्त अभियान
+        *श्री गणपति अथर्वशीर्ष सहस्रावर्तन पारायण *</marquee></div>
+        <div id="dateTimeContainer" style="text-align: center; font-size: 1rem;"></div>
+
+<script>
+function updateDateTime() {
+    const dateTimeContainer = document.getElementById('dateTimeContainer');
+    
+    // Get the current date and time
+    const currentDate = new Date();
+    const dateString = currentDate.toLocaleDateString(); // e.g., "9/1/2024"
+    const timeString = currentDate.toLocaleTimeString(); // e.g., "10:23 AM"
+
+    // Update the content with the current date and time
+    dateTimeContainer.innerHTML = `${dateString} ${timeString}`;
+}
+
+// Initial call to set the date and time
+updateDateTime();
+
+// Update the date and time every second
+setInterval(updateDateTime, 1000);
+</script>
+
+        <strong style="font-size: 1.5rem;">पारायण संपन्न</strong>
+        
+        <div class="animated-text" id="allCount" style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;">Loading...</div>
+    <div class="audio-player">
+      <button class="play-pause-button">▶️</button>
+      <div class="progress-bar-container">
+          <div class="progress-bar-fill"></div>
+      </div>
+  </div>
+    <audio id="audio">
+        <source src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <input class="form-check-input" type="checkbox" id="playCheckbox">
+      <label class="form-check-label" for="playCheckbox">
+       <b>Play in Auto Repeat Mode</b>
+      </label>
+      
+      <p id="trackName"></p>
+      <p><b>Today's Count:</b><span id="timesPlayed">0</span></p>
+      <p><b>Play Time: </b><span id="totalTime">0</span> seconds</p>
+    </div>
+    <style>
+        /* Custom CSS */
+        .song-list-item {
+          cursor: pointer;
+          transition: background-color 0.3s ease-in-out;
+        }
+    
+        /* Hover effect */
+        .song-list-item:hover {
+          background-color: goldenrod;
+        }
+
+        textarea {
+      width: 100%;
+      height: 300px;
+      resize: none;
+      overflow-y: auto;
+      font-family: 'Arial', sans-serif;
+      font-size: 16px;
+    }
+      </style>
+    <ul class="list-group text-center" style="width: 100%;">
+        <!-- List of songs -->
+        <li class="list-group-item song-list-item" onclick="playSong('assets/pray/2.mp3',1)"><button class="play-pause-button">▶️</button> अथर्वशीर्ष  पारायण </li>
+        <li class="list-group-item song-list-item" onclick="playSong('assets/pray/1.mp3',2)"><button class="play-pause-button">▶️</button> फलश्रुति</li>
+        <!-- Add more songs here -->
+      </ul>
+      <textarea id="pNotes" class="text-center" readonly>
+      </textarea>
+       <!-- Flower Falling Modal -->
+    <div class="modal fade" id="flowerModal" tabindex="-1" role="dialog" aria-labelledby="flowerModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="flowerModalLabel">WoW!</h5>
+                    <button type="button" class="close" id="hide_modal" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Flower Animation Container -->
+                    <img src="assets/img/5.webp" height="250px" width="300px"/>
+                    <!-- Display Data -->
+                    <div id="flowerData">
+                        <p>अभिनन्दन</p>
+                        <p>आपने श्रीगणेश अथर्वशीर्ष के दैनिक 421 आवर्तन पूर्ण कर लिए हैं</p>
+                        <p>गणपति बाप्पा मोरया</p>
+                        <p>Congratulations.</p>
+                        <p>You have completed daily Recitation of Shri Ganesh Atharvashirsha 421 times.</p>
+                        <p>गणपति बाप्पा मोरया</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="assets/js/Simple-Slider-swiper-bundle.min.js"></script>
+    <script src="assets/js/Simple-Slider.js"></script>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/prayer.js"></script>
+    
+</body>
+
+</html>
