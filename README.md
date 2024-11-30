@@ -1,2 +1,2 @@
 # SKSG
-App for Pary to God and Deveotion towards God's Paryer
+App for Pray to God and Deveotion towards God's Prayer
